@@ -60,8 +60,8 @@ ssize_t get_input(info_t *info)
 	_putchar(BUF_FLUSH);
 	r = input_buf(info, &buf, &len);
 	if (r == -1) /* EOF */
-			return (-1);
-	if (len)        /* we have commands left in the chain buffer */
+		return (-1);
+	if (len) /* we have commands left in the chain buffer */
 	{
 		j = i; /* init new iterator to current buf position */
 		p = buf + i; /* get pointer for return */
@@ -93,7 +93,7 @@ ssize_t get_input(info_t *info)
  * read_buf - reads a buffer
  * @info: parameter struct
  * @buf: buffer
- *  @i: size
+ * @i: size
  *
  * Return: r
  */
@@ -128,8 +128,8 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	p = *ptr;
 	if (p && length)
 		s = *length;
-			if (i == len)
-				i = len = 0;
+	if (i == len)
+		i = len = 0;
 
 	r = read_buf(info, buf, &len);
 	if (r == -1 || (r == 0 && len == 0))
